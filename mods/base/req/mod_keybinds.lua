@@ -73,10 +73,10 @@ function LuaModManager:UpdateBindings( state )
 	if not self._input_mouse then
 		self._input_mouse = Input:mouse()
 	end
-	if managers and managers.hud and managers.hud:chat_focus() then
+	if managers and managers.hud and managers.hud._chat_focus then
 		return
 	end
-	
+
 	for keybind_id, key in pairs( LuaModManager:PlayerKeybinds() ) do
 		if not string.is_nil_or_empty( key ) then
 

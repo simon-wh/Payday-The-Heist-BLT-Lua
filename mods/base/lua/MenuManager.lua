@@ -1,8 +1,10 @@
 
 CloneClass( MenuManager )
 CloneClass( MenuCallbackHandler )
-CloneClass( ModMenuCreator )
-CloneClass( MenuModInfoGui )
+ModMenuCreator = ModMenuCreator or class()
+MenuModInfoGui = MenuModInfoGui or class()
+--CloneClass( ModMenuCreator )
+--CloneClass( MenuModInfoGui )
 
 Hooks:RegisterHook( "MenuManagerInitialize" )
 Hooks:RegisterHook( "MenuManagerPostInitialize" )
@@ -47,14 +49,14 @@ Hooks:Add( "MenuManagerPostInitialize", "MenuManagerPostInitialize_Base", functi
 	local success, err = pcall(function()
 
 		-- Setup lua mods menu
-		menu_manager:_base_process_menu(
+		--[[menu_manager:_base_process_menu(
 			{"menu_main"},
 			"mods_options",
 			"options",
 			"MenuManager_Base_SetupModsMenu",
 			"MenuManager_Base_PopulateModsMenu",
 			"MenuManager_Base_BuildModsMenu"
-		)
+		)]]
 
 		-- Setup mod options/keybinds menu
 		menu_manager:_base_process_menu(

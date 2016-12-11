@@ -1,6 +1,6 @@
 
 core:module("SystemMenuManager")
-require("lib/managers/dialogs/SpecializationDialog")
+--require("lib/managers/dialogs/SpecializationDialog")
 
 GenericSystemMenuManager.GENERIC_DOWNLOAD_PROGRESS_CLASS = DownloadProgressDialog
 GenericSystemMenuManager.DOWNLOAD_PROGRESS_CLASS = DownloadProgressDialog

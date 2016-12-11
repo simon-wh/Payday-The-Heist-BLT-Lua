@@ -148,7 +148,7 @@ function Notify:ShowPreviousNotification( suppress_sound )
 		self._current_notification = #self._notifications
 	end
 	if not suppress_sound then
-		managers.menu_component:post_event("highlight")
+		--managers.menu_component:post_event("highlight")
 	end
 	self:_OnUpdated()
 	self:_ResetTimeToNextNotification()
@@ -161,7 +161,7 @@ function Notify:ClickNotification( suppress_sound )
 	if notif and notif.callback then
 		notif.callback()
 		if not suppress_sound then
-			managers.menu_component:post_event("menu_enter")
+			--managers.menu_component:post_event("menu_enter")
 		end
 	end
 
@@ -187,7 +187,7 @@ end
 
 function Notify:_OnUpdated()
 	if not self:GetCurrentNotification().read then
-		managers.menu_component:post_event("job_appear")
+		--managers.menu_component:post_event("job_appear")
 	end
 	Hooks:Call("NotificationManagerOnNotificationsUpdated", self, self._notifications)
 end
@@ -202,9 +202,9 @@ Hooks:Add("MenuUpdate", "Base_Notifications_MenuUpdate", function(t, dt)
 	if #NotificationsManager:GetNotifications() > 1 then
 
 		local hovering = false
-		if managers.menu_component._notifications_gui then
+		--[[if managers.menu_component._notifications_gui then
 			hovering = managers.menu_component._notifications_gui._hovering_on_notification
-		end
+		end]]
 
 		if not hovering then
 

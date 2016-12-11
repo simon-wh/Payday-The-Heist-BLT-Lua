@@ -42,6 +42,9 @@
 			"script_path" : "lua/LocalizationManager.lua"
 		},
 		{ 	"hook_id" : "lib/managers/menumanager",
+			"script_path" : "lua/menuitemdivider.lua"
+		},
+		{ 	"hook_id" : "lib/managers/menumanager",
 			"script_path" : "lua/MenuManager.lua"
 		},
 		{ 	"hook_id" : "lib/setups/gamesetup",
