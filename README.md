@@ -1,4 +1,7 @@
 # Payday: The Heist BLT
+
+A fork of PAYDAY 2 BLT Lua designed to run on PD:TH
+
 An open source Lua hook for Payday: The Heist, designed and created for ease of use for both players and modders.  
 This repository is for the Lua base that controls and loads mods into Payday: The Heist, and the options and save files associated with the BLT. The DLL hook code can be found in it's own [repository](https://github.com/simon-wh/Payday-The-Heist-BLT) ~~[repository](https://github.com/JamesWilko/Payday-2-BLT)~~.
 
