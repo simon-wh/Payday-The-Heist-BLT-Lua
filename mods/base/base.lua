@@ -9,6 +9,11 @@ if not _G then
 	return
 end
 
+
+function declare(var, val)
+	rawset(_G, var, val or false)
+end
+
 -- Localise globals
 local _G = _G
 local io = io
@@ -20,6 +25,12 @@ if not _G.LuaModManager then
 	dofile("mods/base/req/lua_mod_manager.lua")
 end
 local C = LuaModManager.Constants
+_lua_reqs 		= _lua_reqs or {}
+_mods_folders 	= _mods_folders or {}
+_mods 			= _mods or {}
+_prehooks 		= _prehooks or {}
+_posthooks 		= _posthooks or {}
+_wildcard_hooks	= _wildcard_hooks or {}
 
 -- Load JSON and modules
 if not _G.json then
@@ -30,8 +41,8 @@ end
 dofile( C.mods_directory .. C.lua_base_directory .. "req/io_extension.lua" )
 
 -- Set logs and saves paths
-rawset(_G, C.logs_path_global, C.mods_directory .. C.logs_directory)
-rawset(_G, C.save_path_global, C.mods_directory .. C.saves_directory)
+declare(C.logs_path_global, C.mods_directory .. C.logs_directory)
+declare(C.save_path_global, C.mods_directory .. C.saves_directory)
 
 -- BLT base functions
 function BLTBase:Initialize()
@@ -47,7 +58,6 @@ function BLTBase:Initialize()
 	self:OverrideRequire()
 	self:LoadSavedModList()
 	LuaModManager.Mods = self:ProcessModsList( self:FindMods() )
-
 end
 
 function BLTBase:GetOS()

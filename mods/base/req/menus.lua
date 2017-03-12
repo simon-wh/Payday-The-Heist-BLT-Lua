@@ -81,7 +81,7 @@ function Menu:AddDivider( divider_data )
 	local data = {
 		type = "MenuItemDivider",
 		size = divider_data.size or 8,
-		no_text = divider_data.no_text or true,
+		text_id = (divider_data.no_text or true) and "base_empty_text",
 	}
 
 	local params = {

@@ -1,20 +1,20 @@
 {
-	"name" : "Payday 2 BLT",
+	"name" : "Payday The Heist BLT",
 	"description" : "The collection of lua files that allow the lua hook to function",
 	"author" : "James Wilkinson",
 	"contact" : "jw@jameswilko.com",
-	"version" : "1.0",
+	"version" : "1.0.1",
 	"priority" : 1001,
 	"updates" : [
 		{
-			"revision" : 11,
-			"identifier" : "payday2blt"
+			"revision" : 3,
+			"identifier" : "paydaythblt"
 		},
 		{
 			"revision" : "./mods/saves/blt_revision.txt",
-			"identifier" : "payday2bltdll",
+			"identifier" : "paydaythbltdll",
 			"install_dir" : ".",
-			"display_name" : "Payday 2 BLT Hook DLL"
+			"display_name" : "Payday The Heist BLT Hook DLL"
 		}
 	],
 	"pre_hooks" : [
@@ -26,6 +26,9 @@
 		{ "hook_id" : "lib/entry", "script_path" : "req/quick_menu.lua" },
 		{ "hook_id" : "lib/entry", "script_path" : "req/update_mods.lua" },
 		{ "hook_id" : "lib/entry", "script_path" : "req/update_mods_menu.lua" },
+		{ "hook_id" : "lib/entry", "script_path" : "req/scrollable_panel.lua" },
+		{ "hook_id" : "lib/entry", "script_path" : "req/boxgui_obj.lua" },
+		{ "hook_id" : "lib/entry", "script_path" : "req/gui_data.lua" },
 		{ "hook_id" : "lib/entry", "script_path" : "req/notifications.lua" }
 	],
 	"hooks" : [
@@ -38,6 +41,9 @@
 		{ 	"hook_id" : "core/lib/system/corepatchlua",
 			"script_path" : "lua/CorePatchLua.lua"
 		},
+		{ 	"hook_id" : "lib/setups/setup",
+			"script_path" : "lua/Setup.lua"
+		},		
 		{ 	"hook_id" : "lib/managers/localizationmanager",
 			"script_path" : "lua/LocalizationManager.lua"
 		},
@@ -55,6 +61,9 @@
 		},
 		{ 	"hook_id" : "lib/managers/menu/menunodegui",
 			"script_path" : "lua/MenuNodeGUI.lua"
+		},		
+		{ 	"hook_id" : "core/lib/managers/menu/coremenunode",
+			"script_path" : "lua/CoreMenuNode.lua"
 		},
 		{ 	"hook_id" : "lib/managers/menu/items/menuitemcustomizecontroller",
 			"script_path" : "lua/MenuItemCustomizeController.lua"
