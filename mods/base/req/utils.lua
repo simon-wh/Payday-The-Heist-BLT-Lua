@@ -6,9 +6,9 @@ _G.Utils = _G.Utils or {}
 		Copies an existing class into an orig table, so that class functions can be overwritten and called again easily
 	class, The class table to clone
 ]]
-function _G.CloneClass( class )
+function _G.CloneClass(class, id)
 	if not class.orig then
-		class.orig = clone(class)
+		class[id or "orig"] = clone(class)
 	end
 end
 

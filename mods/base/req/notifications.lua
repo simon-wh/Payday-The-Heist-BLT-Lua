@@ -148,7 +148,7 @@ function Notify:ShowPreviousNotification( suppress_sound )
 		self._current_notification = #self._notifications
 	end
 	if not suppress_sound then
-		--managers.menu_component:post_event("highlight")
+		managers.menu_component:post_event("highlight")
 	end
 	self:_OnUpdated()
 	self:_ResetTimeToNextNotification()
@@ -161,7 +161,7 @@ function Notify:ClickNotification( suppress_sound )
 	if notif and notif.callback then
 		notif.callback()
 		if not suppress_sound then
-			--managers.menu_component:post_event("menu_enter")
+			managers.menu_component:post_event("menu_enter")
 		end
 	end
 
@@ -222,7 +222,6 @@ end)
 
 -- Add notifications GUI to main menu
 Hooks:Add("MenuComponentManagerInitialize", "Base_Notifications_MenuComponentManagerInitialize", function(menu)
-
 	menu._create_notifications_gui = function( self )
 		self:create_notifications_gui()
 	end

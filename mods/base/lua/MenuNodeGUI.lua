@@ -2,6 +2,11 @@
 CloneClass( MenuNodeGui )
 
 Hooks:RegisterHook("CustomizeControllerOnKeySet")
+
+Hooks:PostHook(MenuNodeGui, "activate_customize_controller", "activate_customize_controller", function(self)
+	self._skip_first_activate_key = true
+end)
+
 function MenuNodeGui._key_press(self, o, key, input_id, item, no_add)
 
 	if managers.system_menu:is_active() then
@@ -77,7 +82,7 @@ function MenuNodeGui._key_press(self, o, key, input_id, item, no_add)
 	end
 	local button_category = button_data.category
 	local connections = managers.controller:get_settings(managers.controller:get_default_wrapper_type()):get_connection_map()
-	for _, name in ipairs(MenuCustomizeControllerCreator.controls_info_by_category(button_category)) do
+	for _, name in ipairs(MenuCustomizeControllerCreator.CONTROLS) do
 		local connection = connections[name]
 		if connection._btn_connections then
 			for name, btn_connection in pairs(connection._btn_connections) do

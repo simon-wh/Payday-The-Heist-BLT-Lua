@@ -3,11 +3,11 @@
 	"description" : "The collection of lua files that allow the lua hook to function",
 	"author" : "James Wilkinson",
 	"contact" : "jw@jameswilko.com",
-	"version" : "1.0.1",
+	"version" : "1.0.2",
 	"priority" : 1001,
 	"updates" : [
 		{
-			"revision" : 3,
+			"revision" : 4,
 			"identifier" : "paydaythblt"
 		},
 		{
@@ -29,7 +29,10 @@
 		{ "hook_id" : "lib/entry", "script_path" : "req/scrollable_panel.lua" },
 		{ "hook_id" : "lib/entry", "script_path" : "req/boxgui_obj.lua" },
 		{ "hook_id" : "lib/entry", "script_path" : "req/gui_data.lua" },
+		{ "hook_id" : "lib/entry", "script_path" : "req/menu_component.lua" },
 		{ "hook_id" : "lib/entry", "script_path" : "req/notifications.lua" }
+		{ "hook_id" : "lib/entry", "script_path" : "req/notifications_gui_object.lua" }
+		{ "hook_id" : "lib/entry", "script_path" : "req/download_progress_dialog.lua" }
 	],
 	"hooks" : [
 		{ 	"hook_id" : "core/lib/utils/coreclass",
@@ -86,20 +89,14 @@
 		{	"hook_id" : "lib/managers/menu/menucomponentmanager",
 			"script_path" : "lua/MenuComponentManager.lua"
 		},
-		{	"hook_id" : "lib/managers/menu/playerprofileguiobject",
-			"script_path" : "req/notifications_gui_object.lua"
-		},
-		{	"hook_id" : "lib/managers/dialogs/specializationdialog",
-			"script_path" : "req/download_progress_dialog.lua"
-		},
-		{	"hook_id" : "lib/managers/menu/specializationboxgui",
-			"script_path" : "req/download_progress_box_gui.lua"
-		},
 		{	"hook_id" : "lib/managers/systemmenumanager",
 			"script_path" : "lua/SystemMenuManager.lua"
 		},
 		{ 	"hook_id" : "lib/network/base/basenetworksession",
 			"script_path" : "lua/BaseNetworkSession.lua"
+		},		
+		{ 	"hook_id" : "lib/managers/menu/menuinput",
+			"script_path" : "lua/MenuInput.lua"
 		},
 		{ 	"hook_id" : "lib/network/base/networkmanager",
 			"script_path" : "lua/NetworkManager.lua"

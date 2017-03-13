@@ -24,6 +24,17 @@ function MenuManager.open_node( self, node_name, parameter_list )
 	self.orig.open_node( self, node_name, parameter_list )
 end
 
+function MenuManager:close_all_menus(...)
+	self.orig.close_all_menus(self, ...)
+	if managers.menu_component then
+		managers.menu_component:close()
+	end
+end
+
+function MenuManager:is_pc_controller()
+	return self:active_menu() and self:active_menu().input and self:active_menu().input._controller and self:active_menu().input._controller.TYPE == "pc" or managers.controller:get_default_wrapper_type() == "pc"
+end
+
 function MenuManager:show_download_progress( mod_name )
 
 	local dialog_data = {}
